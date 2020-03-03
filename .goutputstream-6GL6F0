@@ -26,3 +26,26 @@ var not_after = time.time() + 7776000 # Time + 90 days
 var root_ca = "CT-AM Certificates"
 var root_not_after = time.time() + 630700000 # Time + 20 years
 var root_key = ''   // fill with root key
+
+
+// Functions
+
+function generate_device_id(){
+
+    }
+
+function generate_user_id(){
+
+    }
+
+function cert_key(){
+
+    }
+
+function encrypt(){
+
+    }
+
+function cert_data(){
+
+    }
