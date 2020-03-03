@@ -1,18 +1,16 @@
 // Requires Bitcoin SV library 
 const bsv = require("bsv")
 
+import "libcrypto"
 
 // Hard coded parameters
 
-function password_check(){
-    // Copy over from bsv-x509 Python
-    }
 
 function passwd(){
     i = 0
     while(i < 4){
         pass_attempt = prompt("Password:")
-        if (<>.password_check(pass_attempt) != True){ // Dependency on password check function
+        if (libcrypto.password_check(pass_attempt) != true){ // Dependency on password check function
             if(i > 2){
                 console.log("\nPassword authentication failed. Aborting....")  
                 exit() 
@@ -20,7 +18,7 @@ function passwd(){
             console.log("\nPassword attempt failed. You have "+str(3-i)+" remaining attempts.")
             i += 1
         } else {
-            break
+           break
         }
     }
 
@@ -42,7 +40,6 @@ function create_certificate(){
     var issuer = prompt("Issuer:")
     // Execute password check
     passwd()
-
     var certificate_data = x509_builder.cert_data(subject_name, device_ID, user_ID) // Build x509 module !!!!!!!!!!!!!!!!!!
     var certificate_template = x509_builder.generate(certificate_data)
     var format_cert = x509_builder.json_format(certificate_template)
